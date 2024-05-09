@@ -1,6 +1,6 @@
-╔═══════════════╗
-║   High Voltage     ║
-╚═══════════════╝
+╔══════════════════╗
+║   High Voltage   ║
+╚══════════════════╝
 
 The original game was a console based game from the 1980s.
 It is a simple game (see "Original Rules" below).
@@ -12,9 +12,9 @@ The "VisualBasic" subfolder is a dump of the High_Voltage.xlsm workbook's VBA.
 This Repo is just for fun and Repo play.
 
 
-╔═══════════════╗
-║   Original Rules    ║
-╚═══════════════╝
+╔══════════════════╗
+║   Original Rules ║
+╚══════════════════╝
 
 You are within the walls of a high voltage maze.
 There are 15 security machines trying to destroy you.
