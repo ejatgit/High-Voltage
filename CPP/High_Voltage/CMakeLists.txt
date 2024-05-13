@@ -12,7 +12,7 @@ endif()
 project ("High_Voltage")
 
 # Add source to this project's executable.
-add_executable (High_Voltage "High_Voltage.cpp" "High_Voltage.h")
+add_executable (High_Voltage "High_Voltage.cpp" "High_Voltage.h" "cPlayer.cpp" "cInterceptor.cpp" "cPlayer.h" "cInterceptor.h" "GlobalVariables.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET High_Voltage PROPERTY CXX_STANDARD 20)
