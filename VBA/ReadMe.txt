@@ -27,5 +27,5 @@ moves are as follows:     7.8.9
                           1.2.3
  10 = No move for the rest of the game.
  -1 = Give up. Situation hopeless.
-and of course '0' Is jump.
+and of course '0' is super jump.
 
