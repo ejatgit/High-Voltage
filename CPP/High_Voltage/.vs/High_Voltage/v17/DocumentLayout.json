@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mRunGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mRunGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mMoveCharacters.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mMoveCharacters.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mBuildMaze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mBuildMaze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\High_Voltage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:High_Voltage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|CMake Overview Pages||{B1CAA5B0-FEB1-4350-8AB9-F895876842F2}"
     }
   ],
@@ -22,12 +42,74 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "mRunGame.cpp",
+              "DocumentMoniker": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mRunGame.cpp",
+              "RelativeDocumentMoniker": "mRunGame.cpp",
+              "ToolTip": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mRunGame.cpp",
+              "RelativeToolTip": "mRunGame.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-11T01:58:27.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "mMoveCharacters.cpp",
+              "DocumentMoniker": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mMoveCharacters.cpp",
+              "RelativeDocumentMoniker": "mMoveCharacters.cpp",
+              "ToolTip": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mMoveCharacters.cpp",
+              "RelativeToolTip": "mMoveCharacters.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-11T01:58:20.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mFunctions.cpp",
+              "DocumentMoniker": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mFunctions.cpp",
+              "RelativeDocumentMoniker": "mFunctions.cpp",
+              "ToolTip": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mFunctions.cpp",
+              "RelativeToolTip": "mFunctions.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-11T01:58:11.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "mBuildMaze.cpp",
+              "DocumentMoniker": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mBuildMaze.cpp",
+              "RelativeDocumentMoniker": "mBuildMaze.cpp",
+              "ToolTip": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\mBuildMaze.cpp",
+              "RelativeToolTip": "mBuildMaze.cpp",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwHYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-11T01:57:53.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "High_Voltage.h",
+              "DocumentMoniker": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\High_Voltage.h",
+              "RelativeDocumentMoniker": "High_Voltage.h",
+              "ToolTip": "C:\\Users\\ejantz\\source\\repos\\High-Voltage\\CPP\\High_Voltage\\High_Voltage.h",
+              "RelativeToolTip": "High_Voltage.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-11T01:39:47.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CMake Overview Pages",
               "DocumentMoniker": "CMake Overview Pages",
               "ToolTip": "CMake Overview Pages",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-11T01:00:04.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T01:00:04.935Z"
             }
           ]
         }

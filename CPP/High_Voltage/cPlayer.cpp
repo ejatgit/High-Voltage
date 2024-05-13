@@ -1,0 +1,35 @@
+//VBA code below. New code and class definition in the header file.
+
+/*Option Explicit
+
+Private m_bAlive As Boolean
+Private m_iRow As Integer
+Private m_iColumn As Integer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Constructor
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Private Sub Class_Initialize()
+m_bAlive = True
+End Sub
+
+Public Property Get Alive() As Boolean
+Alive = m_bAlive
+End Property
+Public Property Let Alive(ByVal a_Value As Boolean)
+m_bAlive = a_Value
+End Property
+
+Public Property Get Row() As Integer
+Row = m_iRow
+End Property
+Public Property Let Row(ByVal a_Value As Integer)
+m_iRow = a_Value
+End Property
+
+Public Property Get Column() As Integer
+Column = m_iColumn
+End Property
+Public Property Let Column(ByVal a_Value As Integer)
+m_iColumn = a_Value
+End Property*/
+
