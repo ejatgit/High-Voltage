@@ -22,13 +22,16 @@ const std::string sHighVoltageSymbol = "x";
 //Public Const iMaxHighVoltageBarriersPerRow As Integer = 15
 const int iMaxHighVoltageBarriersPerRow = 15;
 //Public rMaze As Range
+const int iMazeRows = 25;
+const int iMazeCols = 30;
+std::string rMaze[iMazeRows][iMazeCols];
 // not needed since output goes to the terminal not an excel range
 //Public interceptorCollection As Collection
 
 //reference for below collection
 // https://www.codeproject.com/Articles/6381/Creating-a-Collection-Class-in-C
 template <class TBase>
-class interceptorCollection {
+class CustomCollection {
     protected:
         //The Vector container that will hold the collection of Items
         std::vector<TBase> m_items;
@@ -69,6 +72,7 @@ class interceptorCollection {
             return m_items[ItemKey];
         }
 };
+CustomCollection interceptorCollection;
 //Public cActivePlayer As cPlayer
 cPlayer cActivePlayer{};
 

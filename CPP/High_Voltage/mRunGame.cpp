@@ -1,5 +1,5 @@
 #include"GlobalVariables.h"
-
+#include"mBuildMaze.h"
 //Attribute VB_Name = "mRunGame"
 //Option Explicit
 //

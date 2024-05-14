@@ -9,8 +9,8 @@ private:
     int m_iColumn{};
 
 public:
-    bool Alive() const { return m_bAlive; }
-    int Row() const { return m_iRow; }
-    int Column() const { return m_iColumn; }
+    bool Alive = true;// () const { return m_bAlive; }
+    int Row;// () const { return m_iRow; }
+    int Column;// () const { return m_iColumn; }
 };
 #endif
