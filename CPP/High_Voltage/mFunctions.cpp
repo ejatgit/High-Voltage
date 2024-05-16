@@ -55,10 +55,13 @@
 //
 //End Function
 //
+bool CheckInterceptorsAlive{
 //Function CheckInterceptorsAlive() As Boolean
 //Dim cNowinterceptor As cInterceptor
+cIneterceptor cNowInterceptor;
 //
 //For Each cNowinterceptor In interceptorCollection
+for(do something here)left off here
 //   If cNowinterceptor.Alive Then
 //      CheckInterceptorsAlive = True
 //      Exit For
@@ -68,3 +71,4 @@
 //Next cNowinterceptor
 //   
 //End Function
+}
