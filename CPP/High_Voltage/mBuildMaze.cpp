@@ -1,11 +1,15 @@
+#include<iostream>
+
 #include "cPlayer.h"
 #include "cInterceptor.h"
 #include "GlobalVariables.h"
-#include<iostream>
+
+#include "mBuildMaze.h"
+
 //Attribute VB_Name = "mBuildMaze"
 //Option Explicit
 //
-#include "mBuildMaze.h"
+
 void SpawnPlayer(){
     //Sub SpawnPlayer()
     //Dim iCount As Integer
