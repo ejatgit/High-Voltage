@@ -4,6 +4,7 @@
 //using namespace std;
 
 #include "cPlayer.h"
+#include "cInterceptor.h"
 #ifndef GlobalVariables_H
 #define GlobalVariables_H
 
@@ -72,7 +73,7 @@ class CustomCollection {
             return m_items[ItemKey];
         }
 };
-CustomCollection interceptorCollection;
+CustomCollection<cInterceptor> interceptorCollection;
 //Public cActivePlayer As cPlayer
 cPlayer cActivePlayer{};
 
