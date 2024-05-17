@@ -1,6 +1,7 @@
 #pragma once
 #include<string>
 #include<vector>
+#include <windows.h>
 //using namespace std;
 
 #include "cPlayer.h"
@@ -25,7 +26,12 @@ const int iMaxHighVoltageBarriersPerRow = 15;
 //Public rMaze As Range
 const int iMazeRows = 25;
 const int iMazeCols = 30;
+int nInterAlive;
+int nInterKilled;
+int nTotalinterceptorsKilled;
 std::string rMaze[iMazeRows][iMazeCols];
+HANDLE hStdout, hStdin;
+CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
 // not needed since output goes to the terminal not an excel range
 //Public interceptorCollection As Collection
 
