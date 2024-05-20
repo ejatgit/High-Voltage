@@ -1,5 +1,6 @@
 #include"GlobalVariables.h"
 #include"mBuildMaze.h"
+#include"mController.h"
 #include"mRunGame.h"
 //Attribute VB_Name = "mRunGame"
 //Option Explicit
@@ -10,6 +11,7 @@ void RunGame() {
     //Call InitialFillMaze
     InitialFillMaze;
     //frmController.Show
+    mController_Show;
     //Call ExitGame
     ExitGame;
     //
