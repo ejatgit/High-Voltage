@@ -1,9 +1,10 @@
-#include"GlobalVariables.h"
+//#include<string>
 #include "mFunctions.h"
-
+#include "GlobalVariables.h"
+//#include"High_Voltage.h"
 //Attribute VB_Name = "mFunctions"
 //Option Explicit
-
+using namespace Shared_Vars;
 //
 int offsetRowBy(int iValue) {
     //Function offsetRowBy(ByVal iValue As Integer) As Integer
@@ -77,7 +78,7 @@ int interceptorRowOffset(int iValue) {
         //End Function
 }
 //
-int interceptorColumnOffset(Int iValue) {
+int interceptorColumnOffset(int iValue) {
     //Function interceptorColumnOffset(ByVal iValue As Integer) As Integer
     //Dim iTest As Integer
     //
@@ -107,68 +108,68 @@ int interceptorColumnOffset(Int iValue) {
 bool CheckInterceptorsAlive() {
     //Function CheckInterceptorsAlive() As Boolean
     //Dim cNowinterceptor As cInterceptor
-    cIneterceptor cNowInterceptor;
+    cInterceptor cNowInterceptor;
     //
     //For Each cNowinterceptor In interceptorCollection
     //for (size_t i = 0; i < myVector.size(); ++i)
-        for (int i = 0; i < interceptorCollection.count, ++i)
-        {
-            cNowInterceptor = interceptorCollection[i];
-            //   If cNowinterceptor.Alive Then
-            if (cNowInterceptor.Alive) {
-                //      CheckInterceptorsAlive = True
-                return true;
-                //      Exit For
-                break;
-            }
-            //   Else
-            else
-            {
-                //      CheckInterceptorsAlive = False
-                return false;
-                //   End If            
-            }
-            //Next cNowinterceptor
-            //   
+    for (int i = 0; i < interceptorCollection.Count(); ++i)
+    {
+        cNowInterceptor = interceptorCollection[i];
+        //   If cNowinterceptor.Alive Then
+        if (cNowInterceptor.Alive) {
+            //      CheckInterceptorsAlive = True
+            return true;
+            //      Exit For
+            break;
         }
+        //   Else
+        else
+        {
+            //      CheckInterceptorsAlive = False
+            return false;
+            //   End If            
+        }
+        //Next cNowinterceptor
+        //   
+    }
     //End Function
 }
 void MsgBox(std::string sNowMessage,std::string rLocation) {
     //write out to the console some where
-    if (rLocation="nMsgbox0")
+    if (rLocation == "nMsgbox0")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 2;
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
-        cout << sNowMessage << endl;
+        std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation = "nMsgbox1")
+    else if (rLocation == "nMsgbox1")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 3;
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
-        cout << sNowMessage << endl;
+        std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation = "nInterAlive")
+    else if (rLocation == "nInterAlive")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 4;
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
-        cout << sNowMessage << endl;
+        std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation = "nInterKilled")
+    else if (rLocation == "nInterKilled")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 5;
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
-        cout << sNowMessage << endl;
+        std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation = "nTotalinterceptorsKilled")
+    else if (rLocation == "nTotalinterceptorsKilled")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 6;
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
-        cout << sNowMessage << endl;
+        std::cout << sNowMessage << std::endl;
     }
     
 }

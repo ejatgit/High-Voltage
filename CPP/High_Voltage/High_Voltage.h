@@ -3,7 +3,13 @@
 
 #pragma once
 
-#include <iostream>
+//#include <iostream>
 
 // TODO: Reference additional headers your program requires here.
-#include"GlobalVariables.h"
+#ifndef High_Voltage_H
+#define High_Voltage_H
+//#include"GlobalVariables.h"
+
+#endif // !
+
+

@@ -1,15 +1,12 @@
-#include<iostream>
-
-#include "cPlayer.h"
-#include "cInterceptor.h"
-#include "GlobalVariables.h"
-
 #include "mBuildMaze.h"
-
+//#include"High_Voltage.h"
+#include"cPlayer.h"
+#include"cInterceptor.h"
+#include"GlobalVariables.h"
 //Attribute VB_Name = "mBuildMaze"
 //Option Explicit
 //
-
+using namespace Shared_Vars;
 void SpawnPlayer(){
     //Sub SpawnPlayer()
     //Dim iCount As Integer
@@ -76,7 +73,8 @@ void Spawninterceptors() {
                 //         cNowinterceptor.Column = iColumn
                 cNowinterceptor.Column = iColumn;
                 //         Call interceptorCollection.Add(cNowinterceptor)
-                interceptorCollection.add(cNowinterceptor);
+                int iCount = interceptorCollection.Add();
+                interceptorCollection[iCount] = cNowinterceptor;
                 //         Exit Do
                 break;
                 //      End If
@@ -193,12 +191,12 @@ void InitialFillMaze(){
     //Call ClearMaze
     ClearMaze();
 //Call InstallHighVoltageBarriers
-    InstallHighVoltageBarriers;
+    InstallHighVoltageBarriers();
 //Call Spawninterceptors
-    Spawninterceptors;
+    Spawninterceptors();
 //Call SpawnPlayer
 //SpawnPlayer();
-    SpawnPlayer;
+    SpawnPlayer();
 //Application.Calculation = xlCalculationAutomatic
 //End Sub
 };

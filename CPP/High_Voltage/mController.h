@@ -2,6 +2,7 @@
 
 #ifndef mController_H
 #define mController_H
+//#include"GlobalVariables.h"
 void mController_Show();
 void CommandButton0_Click();
 void CommandButton1_Click();
