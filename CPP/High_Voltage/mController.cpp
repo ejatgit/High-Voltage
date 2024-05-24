@@ -1,10 +1,8 @@
-#include<string>
-#include<iostream>
-#include"GlobalVariables.h"
+#include"mController.h"
 #include"mFunctions.h"
 #include"mMoveCharacters.h"
-#include"mController.h"
-
+//#include"High_Voltage.h"
+#include"GlobalVariables.h"
 bool UnLoadMe{ false };
 
 void mController_Show() {
@@ -68,66 +66,66 @@ void mController_Show() {
 
 
 void CommandButton0_Click() {
-    int iRow{ ((rand() % iMazeRows) + 1) - cActivePlayer.Row };
-    int iColumn{ ((rand() % iMazeCols) + 1) - cActivePlayer.Column };
+    int iRow{ ((rand() % iMazeRows) + 1) - Shared_Vars::cActivePlayer.Row };
+    int iColumn{ ((rand() % iMazeCols) + 1) - Shared_Vars::cActivePlayer.Column };
     MsgBox("Super Jump!!!", "MsgBox0");
     MovePlayer(iRow, iColumn);
-    MoveInterceptors;
+    MoveInterceptors();
     WhoIsAlive();
 }
 
 void CommandButton1_Click(){
     MovePlayer(1, -1);
-    MoveInterceptors;
+    MoveInterceptors();
     WhoIsAlive();
 }
 
 void CommandButton2_Click() {
     MovePlayer(1, 0);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton3_Click() {
     MovePlayer(1, 1);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton4_Click() {
     MovePlayer(0, -1);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton5_Click() {
     MovePlayer(0, 0);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton6_Click() {
     MovePlayer(0, 1);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton7_Click() {
     MovePlayer(-1, -1);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton8_Click() {
     MovePlayer(-1, 0);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButton9_Click() {
     MovePlayer(-1, 1);
-    MoveInterceptors;
-    WhoIsAlive;
+    MoveInterceptors();
+    WhoIsAlive();
 }
 
 void CommandButtonExit_Click(){
@@ -137,7 +135,7 @@ void CommandButtonExit_Click(){
 
 void WhoIsAlive(){
 
-    if (cActivePlayer.Alive == false) {
+    if (Shared_Vars::cActivePlayer.Alive == false) {
         MsgBox("You are dead.  You lose.", "nMsgbox2");
             //Call Unload(Me)
         UnLoadMe = true;

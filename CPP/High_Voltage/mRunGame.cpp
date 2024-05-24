@@ -1,7 +1,7 @@
-#include"GlobalVariables.h"
+#include"mRunGame.h"
 #include"mBuildMaze.h"
 #include"mController.h"
-#include"mRunGame.h"
+//#include"High_Voltage.h"
 //Attribute VB_Name = "mRunGame"
 //Option Explicit
 //
@@ -9,11 +9,11 @@ void RunGame() {
     //Sub RunGame()
     //
     //Call InitialFillMaze
-    InitialFillMaze;
+    InitialFillMaze();
     //frmController.Show
-    mController_Show;
+    mController_Show();
     //Call ExitGame
-    ExitGame;
+    ExitGame();
     //
     //End Sub
 }//

@@ -12,7 +12,8 @@ endif()
 project ("High_Voltage")
 
 # Add source to this project's executable.
-add_executable (High_Voltage "High_Voltage.cpp" "High_Voltage.h" "cPlayer.cpp" "cInterceptor.cpp" "cPlayer.h" "cInterceptor.h" "GlobalVariables.h" "mBuildMaze.h" "mRunGame.h" "mMoveCharacters.h" "mController.cpp" "mController.h")
+add_executable (High_Voltage "High_Voltage.h" "High_Voltage.cpp" "GlobalVariables.h" "GlobalVariables.cpp" "cPlayer.h" "cPlayer.cpp" "cInterceptor.h" "cInterceptor.cpp" "mBuildMaze.h" "mBuildMaze.cpp" "mController.h" "mController.cpp" "mFunctions.h" "mFunctions.cpp" "mMoveCharacters.h" "mMoveCharacters.cpp" "mRunGame.h" "mRunGame.cpp"
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET High_Voltage PROPERTY CXX_STANDARD 20)

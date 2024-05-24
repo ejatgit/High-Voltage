@@ -3,14 +3,15 @@
 
 #include "High_Voltage.h"
 #include"mRunGame.h"
-using namespace std;
-
+//using namespace std;
+//using namespace Shared_Vars;
+#include"GlobalVariables.h"
 int main()
 {
-	hStdin = GetStdHandle(STD_INPUT_HANDLE);
-	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+	Shared_Vars::hStdin = GetStdHandle(STD_INPUT_HANDLE);
+	Shared_Vars::hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	cout << "Hello CMake." << endl;
+	//std::cout << "Hello CMake." << std::endl;
 	RunGame();
 	return 0;
 }
