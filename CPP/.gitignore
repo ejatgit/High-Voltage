@@ -1,6 +1,6 @@
 # Visual Studio 2019 cache/options directory
 .vs/
-High-Voltage/.vs/
+High_Voltage/.vs/
 # Add this line
 out/
-High-Voltage/out/
+High_Voltage/out/
