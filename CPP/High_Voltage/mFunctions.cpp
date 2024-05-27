@@ -57,11 +57,12 @@ int interceptorRowOffset(int iValue) {
     //Dim iTest As Integer
     //
     //iTest = cActivePlayer.Row - iValue
-    int iTest = cActivePlayer.Row - iValue;
+    int iTest = cActivePlayer.Row() - iValue;
     //
         //If iTest > 0 Then
     if (iTest > 0) {
         //   interceptorRowOffset = 1
+        return 1;
     }
     //ElseIf iTest < 0 Then
     else if (iTest < 0) {
@@ -83,7 +84,7 @@ int interceptorColumnOffset(int iValue) {
     //Dim iTest As Integer
     //
     //iTest = cActivePlayer.Column - iValue
-    int iTest = cActivePlayer.Column - iValue;
+    int iTest = cActivePlayer.Column() - iValue;
     //
        //If iTest > 0 Then
     if (iTest > 0) {
@@ -108,17 +109,19 @@ int interceptorColumnOffset(int iValue) {
 bool CheckInterceptorsAlive() {
     //Function CheckInterceptorsAlive() As Boolean
     //Dim cNowinterceptor As cInterceptor
-    cInterceptor cNowInterceptor;
+    bool bTemp{ false };
+    //cInterceptor cNowInterceptor;
     //
     //For Each cNowinterceptor In interceptorCollection
     //for (size_t i = 0; i < myVector.size(); ++i)
-    for (int i = 0; i < interceptorCollection.Count(); ++i)
+    //for (int i = 0; i < interceptorCollection.Count(); ++i)
+    for (int i = 0; i < interceptorCollection.size(); ++i)
     {
-        cNowInterceptor = interceptorCollection[i];
+        cInterceptor cNowInterceptor = interceptorCollection[i];
         //   If cNowinterceptor.Alive Then
-        if (cNowInterceptor.Alive) {
+        if (cNowInterceptor.Alive() == true) {
             //      CheckInterceptorsAlive = True
-            return true;
+            bTemp = true;
             //      Exit For
             break;
         }
@@ -126,15 +129,17 @@ bool CheckInterceptorsAlive() {
         else
         {
             //      CheckInterceptorsAlive = False
-            return false;
+            bTemp = false;
             //   End If            
         }
         //Next cNowinterceptor
-        //   
+        //           
     }
+    return bTemp;
     //End Function
 }
-void MsgBox(std::string sNowMessage,std::string rLocation) {
+
+void Output_A_Message(std::string sNowMessage,std::string rLocation) {
     //write out to the console some where
     if (rLocation == "nMsgbox0")
     {
@@ -143,7 +148,7 @@ void MsgBox(std::string sNowMessage,std::string rLocation) {
         SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation == "nMsgbox1")
+    else if (rLocation == "nMsgBox1")
     {
         csbiInfo.dwCursorPosition.X = 0;
         csbiInfo.dwCursorPosition.Y = iMazeRows + 3;
@@ -173,3 +178,5 @@ void MsgBox(std::string sNowMessage,std::string rLocation) {
     }
     
 }
+
+

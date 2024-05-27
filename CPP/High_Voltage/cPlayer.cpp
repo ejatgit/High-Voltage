@@ -1,4 +1,33 @@
 //VBA code below. New code and class definition in the header file.
+#include"GlobalVariables.h"
+
+bool cPlayer::Alive() {
+    return cPlayer::m_bAlive;
+}
+
+void cPlayer::Alive(bool bNowAlive) {
+    cPlayer::m_bAlive = bNowAlive;
+}
+
+int cPlayer::Row() {
+   // cPlayer::m_iRow = iNowRow;
+    return cPlayer::m_iRow;
+}
+
+void cPlayer::Row(int iNowRow) {
+    cPlayer::m_iRow = iNowRow;
+    //return cPlayer::m_iRow;
+}
+
+int cPlayer::Column() {
+    //cPlayer::m_iColumn = iNowCol;
+    return cPlayer::m_iColumn;
+}
+
+void cPlayer::Column(int iNowCol) {
+    cPlayer::m_iColumn = iNowCol;
+   // return cPlayer::m_iColumn;
+}
 
 /*Option Explicit
 
