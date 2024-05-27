@@ -89,7 +89,7 @@ int interceptorColumnOffset(int iValue) {
        //If iTest > 0 Then
     if (iTest > 0) {
         //   interceptorColumnOffset = 1
-        return 0;
+        return 1;
     }
     //ElseIf iTest < 0 Then
     else if (iTest < 0) {
@@ -143,37 +143,37 @@ void Output_A_Message(std::string sNowMessage,std::string rLocation) {
     //write out to the console some where
     if (rLocation == "nMsgbox0")
     {
-        csbiInfo.dwCursorPosition.X = 0;
-        csbiInfo.dwCursorPosition.Y = iMazeRows + 2;
-        SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+       // csbiInfo.dwCursorPosition.X = 0;
+       // csbiInfo.dwCursorPosition.Y = iMazeRows + 2;
+       // SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
     else if (rLocation == "nMsgBox1")
     {
-        csbiInfo.dwCursorPosition.X = 0;
-        csbiInfo.dwCursorPosition.Y = iMazeRows + 3;
-        SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+      //  csbiInfo.dwCursorPosition.X = 0;
+       // csbiInfo.dwCursorPosition.Y = iMazeRows + 3;
+        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
     else if (rLocation == "nInterAlive")
     {
-        csbiInfo.dwCursorPosition.X = 0;
-        csbiInfo.dwCursorPosition.Y = iMazeRows + 4;
-        SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+        //csbiInfo.dwCursorPosition.X = 0;
+        //csbiInfo.dwCursorPosition.Y = iMazeRows + 4;
+        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
     else if (rLocation == "nInterKilled")
     {
-        csbiInfo.dwCursorPosition.X = 0;
-        csbiInfo.dwCursorPosition.Y = iMazeRows + 5;
-        SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+        //csbiInfo.dwCursorPosition.X = 0;
+        //csbiInfo.dwCursorPosition.Y = iMazeRows + 5;
+        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
     else if (rLocation == "nTotalinterceptorsKilled")
     {
-        csbiInfo.dwCursorPosition.X = 0;
-        csbiInfo.dwCursorPosition.Y = iMazeRows + 6;
-        SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+        //csbiInfo.dwCursorPosition.X = 0;
+        //csbiInfo.dwCursorPosition.Y = iMazeRows + 6;
+        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
     
