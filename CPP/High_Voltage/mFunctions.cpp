@@ -141,7 +141,7 @@ bool CheckInterceptorsAlive() {
 
 void Output_A_Message(std::string sNowMessage,std::string rLocation) {
     //write out to the console some where
-    if (rLocation == "nMsgbox0")
+    if (rLocation == "nMsgBox0")
     {
        // csbiInfo.dwCursorPosition.X = 0;
        // csbiInfo.dwCursorPosition.Y = iMazeRows + 2;
@@ -155,28 +155,59 @@ void Output_A_Message(std::string sNowMessage,std::string rLocation) {
         //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation == "nInterAlive")
+    else if (rLocation == "nMsgBox2")
     {
-        //csbiInfo.dwCursorPosition.X = 0;
-        //csbiInfo.dwCursorPosition.Y = iMazeRows + 4;
-        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+        //  csbiInfo.dwCursorPosition.X = 0;
+         // csbiInfo.dwCursorPosition.Y = iMazeRows + 4;
+          //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation == "nInterKilled")
+    else if (rLocation == "nInterAlive")
     {
         //csbiInfo.dwCursorPosition.X = 0;
         //csbiInfo.dwCursorPosition.Y = iMazeRows + 5;
         //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
-    else if (rLocation == "nTotalinterceptorsKilled")
+    else if (rLocation == "nInterKilled")
     {
         //csbiInfo.dwCursorPosition.X = 0;
         //csbiInfo.dwCursorPosition.Y = iMazeRows + 6;
         //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
         std::cout << sNowMessage << std::endl;
     }
+    else if (rLocation == "nTotalinterceptorsKilled")
+    {
+        //csbiInfo.dwCursorPosition.X = 0;
+        //csbiInfo.dwCursorPosition.Y = iMazeRows + 7;
+        //SetConsoleCursorPosition(hStdout, csbiInfo.dwCursorPosition);
+        std::cout << sNowMessage << std::endl;
+    }
     
+}
+bool PlayAGame() {
+    std::string sResponse;
+    Output_A_Message("Do you want to play a game (Y or N)? ", "nMsgBox0");
+    std::cin >> sResponse;
+    std::string sLeftChar = sResponse.substr(0,1);
+    if (sLeftChar == "Y" || sLeftChar == "y") {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+bool PlayAgain() {
+    std::string sResponse;
+    Output_A_Message("Do you want to play again (Y or N)? ", "nMsgBox0");
+    std::cin >> sResponse;
+    std::string sLeftChar = sResponse.substr(0, 1);
+    if (sLeftChar == "Y" || sLeftChar == "y") {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 

@@ -19,6 +19,7 @@ void SpawnPlayer(){
     //iCount = 1
     //
     //Do
+    srand(time(NULL));
     for (int iCount = 0; iCount < 1000; ++iCount) {
         //   iRow = Int(((rMaze.Rows.Count - 1) * Rnd) + 2)
         int iRow = ((rand() % (iMazeRows - 1)) + 2);
@@ -56,6 +57,7 @@ void Spawninterceptors() {
     //
     
     //For i = 1 To iNumberOfinterceptors
+    srand(time(NULL));
     for (int i = 0; i < iNumberOfinterceptors; ++i) {
         //   iCount = 1
         //   Set cNowinterceptor = New cInterceptor
@@ -109,6 +111,7 @@ void InstallHighVoltageBarriers(){
     int iDice;
     //
     //For iRow = 1 To rMaze.Rows.Count
+    srand(time(NULL));
     for (int iRow = 0; iRow < iMazeRows; ++iRow) {
         //   iBarrierCount = 0
         iBarrierCount = 0;

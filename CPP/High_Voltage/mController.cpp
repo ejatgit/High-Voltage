@@ -7,7 +7,7 @@
 bool UnLoadMe{};
 
 void mController_Show() {
-    Output_A_Message("Make your move: ", "MsgBox0");
+    Output_A_Message("Make your move: ", "nMsgBox0");
     UnLoadMe = false;
     std::string sNowInput{ "" };
     do
@@ -60,7 +60,7 @@ void mController_Show() {
         else
         {
             //do nothing
-            Output_A_Message("I don't understand.", "MsgBox0");
+            Output_A_Message("I don't understand.", "nMsgBox0");
         }
     } while (UnLoadMe == false);
 }
@@ -68,9 +68,10 @@ void mController_Show() {
 
 
 void CommandButton0_Click() {
+    srand(time(NULL));
     int iRow{ ((rand() % iMazeRows) + 1) - Shared_Vars::cActivePlayer.Row()};
     int iColumn{ ((rand() % iMazeCols) + 1) - Shared_Vars::cActivePlayer.Column()};
-    Output_A_Message("Super Jump!!!", "MsgBox0");
+    Output_A_Message("Super Jump!!!", "nMsgBox0");
     MovePlayer(iRow, iColumn);
     MoveInterceptors();
     WhoIsAlive();
@@ -138,12 +139,12 @@ void CommandButtonExit_Click(){
 void WhoIsAlive(){
     DrawTheMaze();
     if (Shared_Vars::cActivePlayer.Alive() == false) {
-        Output_A_Message("You are dead.  You lose.", "nMsgbox2");
+        Output_A_Message("You are dead.  You lose.", "nMsgBox2");
             //Call Unload(Me)
         UnLoadMe = true;
     }
     else if (CheckInterceptorsAlive() == false) {
-        Output_A_Message("All the interceptors are dead.  You win.", "nMsgbox2");            
+        Output_A_Message("All the interceptors are dead.  You win.", "nMsgBox2");            
             //Call Unload(Me)
         UnLoadMe = true;
     }

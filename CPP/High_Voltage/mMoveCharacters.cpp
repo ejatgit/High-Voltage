@@ -44,7 +44,7 @@ void MovePlayer(int x_iRow, int x_iColumn) {
         rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sDeadPlayerSymbol;
         //   'MsgBox "You hit an interceptor!"
         //   Range("nMsgbox1").Value = "You hit an interceptor!"
-        Output_A_Message("You hit an interceptor!","MsgBox0");
+        Output_A_Message("You hit an interceptor!","nMsgBox0");
         //   
         cActivePlayer.Alive(false);
     }
@@ -56,7 +56,7 @@ void MovePlayer(int x_iRow, int x_iColumn) {
         rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sDeadPlayerSymbol;
     //   'MsgBox "You hit a barrier!"
     //   Range("nMsgbox1").Value = "You hit a barrier!"
-        Output_A_Message("You hit a barrier!","MsgBox0");
+        Output_A_Message("You hit a barrier!","nMsgBox0");
     //   cActivePlayer.Alive = False
         cActivePlayer.Alive(false);
     //End If    
@@ -167,7 +167,7 @@ void MoveInterceptors(){
     if (iPlayerDeaths > 0) {
         //   'MsgBox "You've been hit by " & iPlayerDeaths & " interceptor(s)!"
         //   Range("nMsgbox0").Value = "You've been hit by " & iPlayerDeaths & " interceptor(s)!"
-        Output_A_Message("You've been hit by " + std::to_string(iPlayerDeaths) + " interceptor(s)!", "nMsgbox0");
+        Output_A_Message("You've been hit by " + std::to_string(iPlayerDeaths) + " interceptor(s)!", "nMsgBox0");
         //End If
     } //
         //End Sub       
