@@ -7,5 +7,6 @@
 //#include"GlobalVariables.h"
 
 void RunGame();
+void GameIntro();
 void ExitGame();
 #endif

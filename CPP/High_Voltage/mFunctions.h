@@ -11,5 +11,7 @@ int interceptorRowOffset(int iValue);
 int interceptorColumnOffset(int iValue);
 bool CheckInterceptorsAlive();
 void Output_A_Message(std::string sNowMessage, std::string rLocation);
+bool PlayAGame();
+bool PlayAgain();
 #endif
 
