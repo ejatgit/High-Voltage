@@ -86,36 +86,41 @@ void MoveInterceptors(){
     //std::cerr << "Number of Interceptors: " + interceptorCollection.size();
     //for (int i = 0; i < interceptorCollection.Count(); ++i) {
     for (int i = 0; i < interceptorCollection.size(); ++i) {
-        cInterceptor cNowInterceptor = interceptorCollection[i];
+       // cInterceptor cNowInterceptor = interceptorCollection[i];
         //   If cNowinterceptor.Alive Then
         
-        if (cNowInterceptor.Alive() == true) {
+        if (interceptorCollection[i].Alive() == true) {
             //      iLastRow = cNowinterceptor.Row
-            iLastRow = cNowInterceptor.Row();
+            iLastRow = interceptorCollection[i].Row();
             //      iLastColumn = cNowinterceptor.Column
-            iLastColumn = cNowInterceptor.Column();
+            iLastColumn = interceptorCollection[i].Column();
             //      
             //      cNowinterceptor.Row = cNowinterceptor.Row + interceptorRowOffset(cNowinterceptor.Row)
-            cNowInterceptor.Row(cNowInterceptor.Row() + interceptorRowOffset(cNowInterceptor.Row()));
+           // cNowInterceptor.Row(cNowInterceptor.Row() + interceptorRowOffset(cNowInterceptor.Row()));
+            interceptorCollection[i].Row(interceptorCollection[i].Row() + interceptorRowOffset(interceptorCollection[i].Row()));
             //      cNowinterceptor.Column = cNowinterceptor.Column + interceptorColumnOffset(cNowinterceptor.Column)
-            cNowInterceptor.Column(cNowInterceptor.Column() + interceptorColumnOffset(cNowInterceptor.Column()));
+           // cNowInterceptor.Column(cNowInterceptor.Column() + interceptorColumnOffset(cNowInterceptor.Column()));
+            interceptorCollection[i].Column(interceptorCollection[i].Column() + interceptorColumnOffset(interceptorCollection[i].Column()));
             //         
             //      sTargetChar = rMaze.Cells(cNowinterceptor.Row, cNowinterceptor.Column).Value
-            sTargetChar = rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()];
+            //sTargetChar = rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()];
+            sTargetChar = rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()];
             //      
             //      If sTargetChar = sOpenAreaSymbol Then
             if (sTargetChar == sOpenAreaSymbol) {
                 //         rMaze.Cells(iLastRow, iLastColumn).Value = sOpenAreaSymbol
                 rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
                 //         rMaze.Cells(cNowinterceptor.Row, cNowinterceptor.Column).Value = sinterceptorSymbol
-                rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sInterceptorSymbol;
+               // rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sInterceptorSymbol;
+                rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sInterceptorSymbol;
             }
             //      ElseIf sTargetChar = sPlayerSymbol Then
             else if (sTargetChar == sPlayerSymbol) {
                 //         rMaze.Cells(iLastRow, iLastColumn).Value = sOpenAreaSymbol
                 rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
                 //         rMaze.Cells(cNowinterceptor.Row, cNowinterceptor.Column).Value = sDeadPlayerSymbol
-                rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sDeadPlayerSymbol;
+                //rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sDeadPlayerSymbol;
+                rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sDeadPlayerSymbol;
                 //         iPlayerDeaths = iPlayerDeaths + 1
                 iPlayerDeaths = iPlayerDeaths + 1;
                 //         cActivePlayer.Alive = False
@@ -127,12 +132,14 @@ void MoveInterceptors(){
                 //         iDeaths = iDeaths + 1
                 iDeaths = iDeaths + 1;
                 //         cNowinterceptor.Alive = False
-                cNowInterceptor.Alive(false);
+                //cNowInterceptor.Alive(false);
+                interceptorCollection[i].Alive(false);
                 //      End If
             }
             else {
                 rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;                
-                rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sInterceptorSymbol;
+                //rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sInterceptorSymbol;
+                rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sInterceptorSymbol;
             }
             //   End If
         }
