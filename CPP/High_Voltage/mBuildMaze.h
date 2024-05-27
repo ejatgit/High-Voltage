@@ -9,5 +9,5 @@ void Spawninterceptors();
 void InstallHighVoltageBarriers();
 void ClearMaze();
 void InitialFillMaze();
-
+void DrawTheMaze();
 #endif

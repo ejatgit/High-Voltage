@@ -12,9 +12,9 @@
 //Public cActivePlayer As cPlayer
 #include "GlobalVariables.h"
 namespace Shared_Vars{
-    extern int nInterAlive{ 0 };
-    extern int nInterKilled{ 0 };
-    extern int nTotalinterceptorsKilled{ 0 };
+    extern int nInterAlive{};
+    extern int nInterKilled{};
+    extern int nTotalinterceptorsKilled{};
     extern std::string rMaze[iMazeRows][iMazeCols]{};
     extern HANDLE hStdout{};
     extern HANDLE hStdin{};
@@ -23,7 +23,8 @@ namespace Shared_Vars{
 
     //reference for below collection
 // https://www.codeproject.com/Articles/6381/Creating-a-Collection-Class-in-C
-   template <class TBase>
+  /*
+    template <class TBase>
     //class CustomCollection {
     //protected:
         //The Vector container that will hold the collection of Items
@@ -65,11 +66,13 @@ namespace Shared_Vars{
         }
         //Operator Returning a reference to TBase
     template <class TBase>
-    TBase& CustomCollection<TBase>::operator[](int ItemKey)
+    TBase& CustomCollection<TBase>::operator [](int ItemKey)
         {
             return m_items[ItemKey];
         }
     //};
+    */
     //CustomCollection<cInterceptor> interceptorCollection;
-    extern CustomCollection<cInterceptor> interceptorCollection{};
+   // extern CustomCollection<cInterceptor> interceptorCollection{};
+    extern std::vector<cInterceptor> interceptorCollection{};
 }

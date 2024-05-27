@@ -53,14 +53,15 @@ namespace Shared_Vars {
 
     //reference for below collection
     // https://www.codeproject.com/Articles/6381/Creating-a-Collection-Class-in-C
-    template <class TBase>
+  /*
+  template <class TBase>
     class CustomCollection 
     {
     protected:
         //The Vector container that will hold the collection of Items
         std::vector<TBase> m_items;
     public:
-        int Add(void); //{ return (m_items.size() - 1); }
+        int Add(void) ; //{ return (m_items.size() - 1); }
 
         //Function to return the memory address of a specific Item
         TBase* GetAddress(int ItemKey);
@@ -74,15 +75,17 @@ namespace Shared_Vars {
         int Count(void);
 
         //Operator Returning a reference to TBase
-        TBase& operator[](int ItemKey);
+        TBase& operator [](int ItemKey);
 
     };
+    */
     //template <class TBase>
     //CustomCollection<TBase> interceptorCollection;
-    extern CustomCollection<cInterceptor> interceptorCollection;
+  //  extern CustomCollection<cInterceptor> interceptorCollection;
     //CustomCollection interceptorCollection;
     //Public cActivePlayer As cPlayer
     //cPlayer cActivePlayer{};
+    extern std::vector<cInterceptor> interceptorCollection;
 }
 
 #endif

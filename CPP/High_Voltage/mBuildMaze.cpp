@@ -14,7 +14,7 @@ void SpawnPlayer(){
     //Dim iColumn As Integer
     //
     //Set cActivePlayer = New cPlayer
-    cPlayer cActivePlayer;
+   // cPlayer cActivePlayer;
     //
     //iCount = 1
     //
@@ -28,9 +28,9 @@ void SpawnPlayer(){
         if (rMaze[iRow][iColumn] == sOpenAreaSymbol)
         {
             //      cActivePlayer.Row = iRow
-            cActivePlayer.Row = iRow;
+            cActivePlayer.Row(iRow);
             //      cActivePlayer.Column = iColumn
-            cActivePlayer.Column = iColumn;
+            cActivePlayer.Column(iColumn);
             //      Exit Do
             break;
         }
@@ -40,7 +40,7 @@ void SpawnPlayer(){
         //Loop While iCount < 1000
     }//
     //rMaze.Cells(cActivePlayer.Row, cActivePlayer.Column).Value = sPlayerSymbol
-    rMaze[cActivePlayer.Row][cActivePlayer.Column] = sPlayerSymbol;
+    rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sPlayerSymbol;
     //Range("nPlayerCell").Value = rMaze.Cells(cActivePlayer.Row, cActivePlayer.Column).Address
     //
     //End Sub
@@ -69,12 +69,13 @@ void Spawninterceptors() {
             //      If rMaze.Cells(iRow, iColumn).Value = sOpenAreaSymbol Then
             if (rMaze[iRow][iColumn] == sOpenAreaSymbol){
                 //         cNowinterceptor.Row = iRow
-                cNowinterceptor.Row = iRow;
+                cNowinterceptor.Row(iRow);
                 //         cNowinterceptor.Column = iColumn
-                cNowinterceptor.Column = iColumn;
+                cNowinterceptor.Column(iColumn);
                 //         Call interceptorCollection.Add(cNowinterceptor)
-                int iCount = interceptorCollection.Add();
-                interceptorCollection[iCount] = cNowinterceptor;
+                //int iCount = interceptorCollection.Add();
+                //interceptorCollection[iCount] = cNowinterceptor;
+                interceptorCollection.push_back(cNowinterceptor);                
                 //         Exit Do
                 break;
                 //      End If
@@ -86,6 +87,14 @@ void Spawninterceptors() {
     //For Each cNowinterceptor In interceptorCollection
     //   rMaze.Cells(cNowinterceptor.Row, cNowinterceptor.Column).Value = sinterceptorSymbol
     //Next cNowinterceptor
+    for (int i = 0; i < interceptorCollection.size(); ++i) {
+        cInterceptor cNowInterceptor;
+        cNowInterceptor = interceptorCollection[i];
+                //         rMaze.Cells(cNowinterceptor.Row, cNowinterceptor.Column).Value = sinterceptorSymbol
+                rMaze[cNowInterceptor.Row()][cNowInterceptor.Column()] = sInterceptorSymbol;
+        
+     }
+    nInterAlive = interceptorCollection.size() + 1;
     //
     //End Sub
 }
@@ -104,7 +113,7 @@ void InstallHighVoltageBarriers(){
         //   iBarrierCount = 0
         iBarrierCount = 0;
         //   For iCol = 1 To rMaze.Columns.Count
-        for (int iCol = 0; iRow < iMazeCols; ++iCol) {
+        for (int iCol = 0; iCol < iMazeCols; ++iCol) {
             //      If iRow = 1 Or iRow = rMaze.Rows.Count Then
             if ((iRow == 0) || (iRow == iMazeRows - 1))
             {
@@ -161,7 +170,7 @@ void ClearMaze(){
     //For iRow = 1 To rMaze.Rows.Count
     for (int iRow = 0; iRow < iMazeRows; ++iRow) {
         //   For iCol = 1 To rMaze.Columns.Count
-        for (int iCol = 0; iRow < iMazeCols; ++iCol) {
+        for (int iCol = 0; iCol < iMazeCols; ++iCol) {
             //      rMaze.Cells(iRow, iCol).Value = sOpenAreaSymbol
             rMaze[iRow][iCol] = sOpenAreaSymbol;
             //   Next iCol
@@ -189,7 +198,7 @@ void InitialFillMaze(){
     //Range("nInterKilled").Value = 0
     //
     //Call ClearMaze
-    ClearMaze();
+    //ClearMaze();
 //Call InstallHighVoltageBarriers
     InstallHighVoltageBarriers();
 //Call Spawninterceptors
@@ -199,4 +208,16 @@ void InitialFillMaze(){
     SpawnPlayer();
 //Application.Calculation = xlCalculationAutomatic
 //End Sub
-};
+    DrawTheMaze();
+}
+
+void DrawTheMaze()
+{
+    for (int iRow = 0; iRow < iMazeRows; ++iRow) {        
+        for (int iCol = 0; iCol < iMazeCols; ++iCol) {            
+            //rMaze[iRow][iCol] = sOpenAreaSymbol;
+            std::cout << rMaze[iRow][iCol];             
+        }
+        std::cout << std::endl;        
+    }
+}

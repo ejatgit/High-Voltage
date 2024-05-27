@@ -1,12 +1,14 @@
 #include"mController.h"
 #include"mFunctions.h"
 #include"mMoveCharacters.h"
+#include"mBuildMaze.h"
 //#include"High_Voltage.h"
 #include"GlobalVariables.h"
-bool UnLoadMe{ false };
+bool UnLoadMe{};
 
 void mController_Show() {
-    MsgBox("Make your move: ", "MsgBox0");
+    Output_A_Message("Make your move: ", "MsgBox0");
+    UnLoadMe = false;
     std::string sNowInput{ "" };
     do
     {
@@ -58,17 +60,17 @@ void mController_Show() {
         else
         {
             //do nothing
-            MsgBox("I don't understand.", "MsgBox0");
+            Output_A_Message("I don't understand.", "MsgBox0");
         }
-    } while (UnLoadMe==false);
+    } while (UnLoadMe == false);
 }
 
 
 
 void CommandButton0_Click() {
-    int iRow{ ((rand() % iMazeRows) + 1) - Shared_Vars::cActivePlayer.Row };
-    int iColumn{ ((rand() % iMazeCols) + 1) - Shared_Vars::cActivePlayer.Column };
-    MsgBox("Super Jump!!!", "MsgBox0");
+    int iRow{ ((rand() % iMazeRows) + 1) - Shared_Vars::cActivePlayer.Row()};
+    int iColumn{ ((rand() % iMazeCols) + 1) - Shared_Vars::cActivePlayer.Column()};
+    Output_A_Message("Super Jump!!!", "MsgBox0");
     MovePlayer(iRow, iColumn);
     MoveInterceptors();
     WhoIsAlive();
@@ -134,14 +136,14 @@ void CommandButtonExit_Click(){
 }
 
 void WhoIsAlive(){
-
-    if (Shared_Vars::cActivePlayer.Alive == false) {
-        MsgBox("You are dead.  You lose.", "nMsgbox2");
+    DrawTheMaze();
+    if (Shared_Vars::cActivePlayer.Alive() == false) {
+        Output_A_Message("You are dead.  You lose.", "nMsgbox2");
             //Call Unload(Me)
         UnLoadMe = true;
     }
     else if (CheckInterceptorsAlive() == false) {
-        MsgBox("All the interceptors are dead.  You win.", "nMsgbox2");            
+        Output_A_Message("All the interceptors are dead.  You win.", "nMsgbox2");            
             //Call Unload(Me)
         UnLoadMe = true;
     }
