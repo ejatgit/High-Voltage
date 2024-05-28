@@ -1,5 +1,6 @@
 #pragma once
 #include<string>
+#include <limits> 
 
 #ifndef mFunctions_H
 #define mFunctions_H

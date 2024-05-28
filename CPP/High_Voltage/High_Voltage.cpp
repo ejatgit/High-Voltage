@@ -11,7 +11,7 @@ int main()
 	Shared_Vars::hStdin = GetStdHandle(STD_INPUT_HANDLE);
 	Shared_Vars::hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	//std::cout << "Hello CMake." << std::endl;
 	RunGame();
+
 	return 0;
 }
