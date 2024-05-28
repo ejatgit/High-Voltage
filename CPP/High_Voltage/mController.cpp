@@ -6,13 +6,19 @@
 #include"GlobalVariables.h"
 bool UnLoadMe{};
 
-void mController_Show() {
-    Output_A_Message("Make your move: ", "nMsgBox0");
+void mController_Show() {    
     UnLoadMe = false;
     std::string sNowInput{ "" };
+    bool bSkipInput{ false };
     do
     {
-        std::cin >> sNowInput;
+        
+        if (bSkipInput == false) {
+            Output_A_Message("Player row: " + std::to_string(Shared_Vars::cActivePlayer.Row()), "nMsgBox0");
+            Output_A_Message("Player column: " + std::to_string(Shared_Vars::cActivePlayer.Column()), "nMsgBox0");
+            Output_A_Message("Make your move: ", "nQuestion0");
+            std::cin >> sNowInput;
+        }
         if (sNowInput=="0")
         {
             CommandButton0_Click();
@@ -52,6 +58,20 @@ void mController_Show() {
         else if (sNowInput == "9")
         {
             CommandButton9_Click();
+        }
+        else if (sNowInput == "10")
+        {
+            CommandButton10_Click();
+            bSkipInput = true ;
+            sNowInput = "loop_to_the_end";
+        }
+        else if (sNowInput == "-1")
+        {
+            CommandButtonNeg1_Click();
+        }
+        else if (sNowInput == "loop_to_the_end")
+        {
+            LoopToTheEnd();
         }
         else if (sNowInput == "q" || sNowInput == "x")
         {
@@ -131,21 +151,40 @@ void CommandButton9_Click() {
     WhoIsAlive();
 }
 
+void CommandButton10_Click() {
+    std::string sResponse;
+    Output_A_Message("You've chosen to not to move for the rest of the game.", "nMsgBox0");
+    Output_A_Message("We'll see if that was a wise choice or not.", "nMsgBox0");
+    system("pause");
+    MoveInterceptors();
+    WhoIsAlive();
+}
+
+void CommandButtonNeg1_Click() {
+    Output_A_Message("You've chosen to give up.", "nMsgBox0");
+    Shared_Vars::cActivePlayer.Alive(false);
+    Shared_Vars::rMaze[Shared_Vars::cActivePlayer.Row()][Shared_Vars::cActivePlayer.Column()] = sDeadPlayerSymbol;
+    system("pause");
+    WhoIsAlive();
+}
+
+void LoopToTheEnd() {
+    MoveInterceptors();
+    WhoIsAlive();
+}
+
 void CommandButtonExit_Click(){
-//Call Unload(Me)
     UnLoadMe = true;
 }
 
 void WhoIsAlive(){
     DrawTheMaze();
     if (Shared_Vars::cActivePlayer.Alive() == false) {
-        Output_A_Message("You are dead.  You lose.", "nMsgBox2");
-            //Call Unload(Me)
+        Output_A_Message("You are dead.  You lose!", "nMsgBox2");
         UnLoadMe = true;
     }
     else if (CheckInterceptorsAlive() == false) {
-        Output_A_Message("All the interceptors are dead.  You win.", "nMsgBox2");            
-            //Call Unload(Me)
+        Output_A_Message("All the interceptors are dead.  You win!", "nMsgBox2");            
         UnLoadMe = true;
     }
 

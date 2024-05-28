@@ -14,6 +14,9 @@ void CommandButton6_Click();
 void CommandButton7_Click();
 void CommandButton8_Click();
 void CommandButton9_Click();
+void CommandButton10_Click();
+void CommandButtonNeg1_Click();
+void LoopToTheEnd();
 void CommandButtonExit_Click();
 void WhoIsAlive();
 #endif

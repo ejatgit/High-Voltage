@@ -9,11 +9,11 @@ private:
     int m_iColumn{};
 
 public:
-    bool Alive();// () const { return m_bAlive; }
+    bool Alive();
     void Alive(bool bNowAlive);
-    int Row();// () const { return m_iRow; }
+    int Row();
     void Row(int iNowRow);
-    int Column();// () const { return m_iColumn; }
+    int Column();
     void Column(int iNowCol);
 };
 
