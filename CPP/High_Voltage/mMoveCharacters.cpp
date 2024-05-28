@@ -77,7 +77,7 @@ void MoveInterceptors(){
         nInterKilled = nInterKilled + iDeaths;
         Output_A_Message("Dead Interceptor(s): " + std::to_string(nInterKilled), "nInterKilled");
         nTotalinterceptorsKilled = nTotalinterceptorsKilled + iDeaths;
-        Output_A_Message("Total Dead Interceptor(s): " + nTotalinterceptorsKilled, "nTotalinterceptorsKilled");
+        Output_A_Message("Total Dead Interceptor(s): " + std::to_string(nTotalinterceptorsKilled), "nTotalinterceptorsKilled");
     }
     if (iPlayerDeaths > 0) {
         Output_A_Message("You've been hit by " + std::to_string(iPlayerDeaths) + " interceptor(s)!", "nMsgBox0");
