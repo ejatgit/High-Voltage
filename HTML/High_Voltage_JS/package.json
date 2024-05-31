@@ -1,0 +1,14 @@
+{
+  "name": "high_voltage_js",
+  "version": "0.0.0",
+  "description": "High_Voltage_JS",
+  "main": "index.html",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {
+  }
+}
