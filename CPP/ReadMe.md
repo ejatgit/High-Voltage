@@ -5,8 +5,8 @@ Then convert that code into C++
 This is the C++ console version  
 It is a work in progress  
 Some screen captures from the game:  
-![alt text](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Intro.png) 
+![Intro Screen](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Intro.png)  
 Sample game start  
-![alt text](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Start.png)  
+![Maze Loaded](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Start.png)  
 After a few player moves  
-![alt text](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Action.png)
+![Game in Action](https://github.com/ejatgit/High-Voltage/blob/main/CPP/Action.png)
