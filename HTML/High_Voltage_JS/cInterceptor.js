@@ -1,33 +1,39 @@
 
 class cInterceptor {
    //Private
-   #m_bAlive = true;
-   #m_iRow;
-   #m_iColumn;
+   //#m_bAlive = true;
+   //#m_iRow=0;
+   //#m_iColumn=0;
+
+   m_bAlive = true;
+   m_iRow=0;
+   m_iColumn=0;
 
    //Public
-   Alive() {
-      return cInterceptor.#m_bAlive;
+   GetAlive() {
+      return cInterceptor.m_bAlive;
    }
 
-   Alive(bNowAlive) {
-      cInterceptor.#m_bAlive = bNowAlive;
+   SetAlive(bNowAlive) {
+      cInterceptor.m_bAlive = bNowAlive;
    }
 
-   Row() {
-      return cInterceptor.#m_iRow;
+   GetRow() {
+      return cInterceptor.m_iRow;
    }
 
-   Row(iNowRow) {
-      cInterceptor.#m_iRow = iNowRow;
+   SetRow(iNowRow) {
+      //let _iNowRow = iNowRow;
+      cInterceptor.m_iRow = iNowRow;
    }
 
-   Column() {
-      return cInterceptor.#m_iColumn;
+   GetColumn() {
+      return cInterceptor.m_iColumn;
    }
 
-   Column(iNowCol) {
-      cInterceptor.#m_iColumn = iNowCol;
+   SetColumn(iNowCol) {
+      //let _iNowCol = iNowCol;
+      m_iColumn(iNowCol);
    }
 
 }

@@ -1,6 +1,7 @@
 // High_Voltage : Defines the entry point for the application.
 //
-import { RunGame } from "./mRunGame.js";
+//import { RunGame } from "./mRunGame.js";
+//import { InitialFillMaze, ClearMaze } from "./mBuildMaze.js";
 //import { hStdin, hStdout } from "./GlobalVariables.js";
 
 function main()

@@ -1,13 +1,13 @@
 
 //#include"mFunctions.h"
-import { Output_A_Message } from "./mFunctions.js";
+//import { Output_A_Message } from "./mFunctions.js";
 //#include"mMoveCharacters.h"
-import { MovePlayer, MoveInterceptors } from "./mMoveCharacters.js";
+//import { MovePlayer, MoveInterceptors } from "./mMoveCharacters.js";
 //#include"mBuildMaze.h"
-import { cInterceptor } from "./mBuildMaze.js";
+//import { cInterceptor } from "./mBuildMaze.js";
 //#include"High_Voltage.h"
 //#include"GlobalVariables.h"
-import { cActivePlayer, rMaze, iMazeRows, iMazeCols, sDeadPlayerSymbol } from "./GlobalVariables.js";
+//import { cActivePlayer, rMaze, iMazeRows, iMazeCols, sDeadPlayerSymbol } from "./GlobalVariables.js";
 let UnLoadMe = false;
 
 function mController_Show() {
@@ -18,7 +18,7 @@ function mController_Show() {
 
       if (bSkipInput == false) {
          Output_A_Message("Player row: " + cActivePlayer.Row(), "nMsgBox0");
-         Output_A_Message("Player column: " + cActivePlayer.Column(), "nMsgBox0");
+         Output_A_Message("Player column: " + cActivePlayer['m_iColumn'], "nMsgBox0");
          Output_A_Message("Make your move: ", "nQuestion0");
          //std:: cin >> sNowInput;
          let key = Event.key;
@@ -80,7 +80,7 @@ function mController_Show() {
 function CommandButton0_Click() {
    srand(time(NULL));
    let iRow = ((Math.random() % iMazeRows) + 1) - cActivePlayer.Row();
-   let iColumn = ((Math.random() % iMazeCols) + 1) - cActivePlayer.Column();
+   let iColumn = ((Math.random() % iMazeCols) + 1) - cActivePlayer['m_iColumn'];
    Output_A_Message("Super Jump!!!", "nMsgBox0");
    MovePlayer(iRow, iColumn);
    MoveInterceptors();
@@ -152,8 +152,8 @@ function CommandButton10_Click() {
 
 function CommandButtonNeg1_Click() {
    Output_A_Message("You've chosen to give up.", "nMsgBox0");
-   cActivePlayer.Alive(false);
-   rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sDeadPlayerSymbol;
+   cActivePlayer['m_bAlive']=false;
+   rMaze[cActivePlayer.Row()][cActivePlayer['m_iColumn']] = sDeadPlayerSymbol;
    system("pause");
    WhoIsAlive();
 }
@@ -168,8 +168,9 @@ function CommandButtonExit_Click() {
 }
 
 function WhoIsAlive() {
-   DrawTheMaze();
-   if (cActivePlayer.Alive() == false) {
+   //tableCreate();
+   UpdateTheMaze();
+   if (cActivePlayer['m_bAlive'] == false) {
       Output_A_Message("You are dead.  You lose!", "nMsgBox2");
       UnLoadMe = true;
    }
