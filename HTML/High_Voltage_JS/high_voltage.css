@@ -21,6 +21,12 @@ body {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
 
+td {
+    text-align: center;
+    vertical-align: middle;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+}
+
 #content {
     background: #000;
     clear: both;

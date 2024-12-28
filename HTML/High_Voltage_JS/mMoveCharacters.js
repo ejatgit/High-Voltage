@@ -2,35 +2,35 @@
 //#include"mMoveCharacters.h"
 //#include"High_Voltage.h"
 //#include "GlobalVariables.h"
-import { cActivePlayer, sPlayerSymbol, sOpenAreaSymbol, rMaze } from "./GlobalVariables.js";
+//import { cActivePlayer, sPlayerSymbol, sOpenAreaSymbol, rMaze } from "./GlobalVariables.js";
 //#include "mFunctions.h"
-import { Output_A_Message } from "./mFunctions.js";
+//import { Output_A_Message } from "./mFunctions.js";
 
 function MovePlayer(x_iRow, x_iColumn) {
 
-   let iLastRow = cActivePlayer.Row();
-   let iLastColumn = cActivePlayer.Column();
+   let iLastRow = cActivePlayer['m_iRow'];
+   let iLastColumn = cActivePlayer['m_iColumn'];
 
-   cActivePlayer.Row(cActivePlayer.Row() + x_iRow);
-   cActivePlayer.Column(cActivePlayer.Column() + x_iColumn);
+   cActivePlayer['m_iRow'] = (cActivePlayer['m_iRow'] + x_iRow);
+   cActivePlayer['m_iColumn'] = (cActivePlayer['m_iColumn'] + x_iColumn);
 
-   let sTargetChar = rMaze[cActivePlayer.Row()][cActivePlayer.Column()];
+   let sTargetChar = rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']];
 
    if (sTargetChar == sOpenAreaSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-      rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sPlayerSymbol;
+      rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sPlayerSymbol;
    }
    else if (sTargetChar == sInterceptorSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-      rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sDeadPlayerSymbol;
+      rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sDeadPlayerSymbol;
       Output_A_Message("You hit an interceptor!", "nMsgBox0");
-      cActivePlayer.Alive(false);
+      cActivePlayer['m_bAlive']=false;
    }
    else if (sTargetChar == sHighVoltageSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-      rMaze[cActivePlayer.Row()][cActivePlayer.Column()] = sDeadPlayerSymbol;
+      rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sDeadPlayerSymbol;
       Output_A_Message("You hit a barrier!", "nMsgBox0");
-      cActivePlayer.Alive(false);
+      cActivePlayer['m_bAlive'] = false;
    }
 }
 
@@ -41,37 +41,37 @@ function MoveInterceptors() {
    let iLastColumn;
    let iDeaths = 0;
    let iPlayerDeaths = 0;
-   for (let i = 0; i < interceptorCollection.size(); ++i) {
-
-      if (interceptorCollection[i].Alive() == true) {
-         iLastRow = interceptorCollection[i].Row();
-         iLastColumn = interceptorCollection[i].Column();
-         interceptorCollection[i].Row(interceptorCollection[i].Row() + interceptorRowOffset(interceptorCollection[i].Row()));
-         interceptorCollection[i].Column(interceptorCollection[i].Column() + interceptorColumnOffset(interceptorCollection[i].Column()));
-         sTargetChar = rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()];
+   for (let i = 0; i < iNumberOfinterceptors; ++i) {
+      let nowInterceptor = interceptorCollection[i];
+      if (nowInterceptor['m_bAlive'] == true) {
+         iLastRow = nowInterceptor['m_iRow'];
+         iLastColumn = nowInterceptor['m_iColumn'];
+         nowInterceptor['m_iRow']=(nowInterceptor['m_iRow'] + interceptorRowOffset(nowInterceptor['m_iRow']));
+         nowInterceptor['m_iColumn']=(nowInterceptor['m_iColumn'] + interceptorColumnOffset(nowInterceptor['m_iColumn']));
+         sTargetChar = rMaze[nowInterceptor['m_iRow']][nowInterceptor['m_iColumn']];
          if (sTargetChar == sOpenAreaSymbol) {
             rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-            rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sInterceptorSymbol;
+            rMaze[nowInterceptor['m_iRow']][nowInterceptor['m_iColumn']] = sInterceptorSymbol;
          }
          else if (sTargetChar == sPlayerSymbol || sTargetChar == sDeadPlayerSymbol) {
             rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-            rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sDeadPlayerSymbol;
+            rMaze[nowInterceptor['m_iRow']][nowInterceptor['m_iColumn']] = sDeadPlayerSymbol;
             iPlayerDeaths = iPlayerDeaths + 1;
-            cActivePlayer.Alive(false);
+            cActivePlayer['m_bAlive']=false;
          }
          else if (sTargetChar == sHighVoltageSymbol) {
             rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
             iDeaths = iDeaths + 1;
-            interceptorCollection[i].Alive(false);
+            nowInterceptor['m_bAlive']=false;
          }
          else {
             rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
-            rMaze[interceptorCollection[i].Row()][interceptorCollection[i].Column()] = sInterceptorSymbol;
+            rMaze[nowInterceptor['m_iRow']][nowInterceptor['m_iColumn']] = sInterceptorSymbol;
          }
       }
    }
    if (iDeaths > 0) {
-      Output_A_Message("You killed " + iDeaths + " interceptor(s)!", "nMsgbox0");
+      Output_A_Message("You killed " + iDeaths + " interceptor(s)!", "nMsgBox0");
       nInterAlive = nInterAlive - iDeaths;
       Output_A_Message("Alive Interceptor(s): " + nInterAlive, "nInterAlive");
       nInterKilled = nInterKilled + iDeaths;

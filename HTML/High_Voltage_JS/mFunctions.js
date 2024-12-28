@@ -1,6 +1,6 @@
 //#include<string>
 //#include "mFunctions.h"
-import { cActivePlayer, interceptorCollection } from "./GlobalVariables.js";
+//import { cActivePlayer, interceptorCollection } from "./GlobalVariables.js";
 //#include"High_Voltage.h"
 
 
@@ -30,7 +30,7 @@ function offsetColumnBy(iValue) {
 }
 
 function interceptorRowOffset(iValue) {
-   let iTest = cActivePlayer.Row() - iValue;
+   let iTest = cActivePlayer['m_iRow'] - iValue;
    if (iTest > 0) {
       return 1;
    }
@@ -43,7 +43,7 @@ function interceptorRowOffset(iValue) {
 }
 
 function interceptorColumnOffset(iValue) {
-    let iTest = cActivePlayer.Column() - iValue;
+    let iTest = cActivePlayer['m_iColumn'] - iValue;
    if (iTest > 0) {
       return 1;
    }
@@ -58,9 +58,9 @@ function interceptorColumnOffset(iValue) {
 function CheckInterceptorsAlive() {
    let bTemp = false;
 
-   for (let i = 0; i < interceptorCollection.length(); ++i) {
+   for (let i = 0; i < interceptorCollection.length; ++i) {
       let cNowInterceptor = interceptorCollection[i];
-      if (cNowInterceptor.Alive() == true) {
+      if (cNowInterceptor['m_bAlive'] == true) {
          bTemp = true;
          break;
       }
@@ -72,34 +72,35 @@ function CheckInterceptorsAlive() {
 }
 
 function Output_A_Message(sNowMessage, rLocation) {
-   if (rLocation == "nMsgBox0") {
+   if (rLocation === "nMsgBox0") {
       NowTarget = document.getElementById("nMsgBox0");
       //std:: cout << sNowMessage << std:: endl;
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
-   else if (rLocation == "nMsgBox1") {
+   else if (rLocation === "nMsgBox1") {
       NowTarget = document.getElementById("nMsgBox1");
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
-   else if (rLocation == "nMsgBox2") {
+   else if (rLocation === "nMsgBox2") {
       NowTarget = document.getElementById("nMsgBox2");
-      NowTarget.innerHtml = sNowMessage;
+      //NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerHTML = sNowMessage;
    }
-   else if (rLocation == "nInterAlive") {
+   else if (rLocation === "nInterAlive") {
       NowTarget = document.getElementById("nInterAlive");
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
-   else if (rLocation == "nInterKilled") {
+   else if (rLocation === "nInterKilled") {
       NowTarget = document.getElementById("nInterKilled");
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
-   else if (rLocation == "nTotalinterceptorsKilled") {
+   else if (rLocation === "nTotalinterceptorsKilled") {
       NowTarget = document.getElementById("nTotalinterceptorsKilled");
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
-   else if (rLocation == "nQuestion0") {
+   else if (rLocation === "nQuestion0") {
       NowTarget = document.getElementById("nMsgBox0");
-      NowTarget.innerHtml = sNowMessage;
+      NowTarget.firstChild.textContent = sNowMessage;
    }
 }
 function PlayAGame() {
