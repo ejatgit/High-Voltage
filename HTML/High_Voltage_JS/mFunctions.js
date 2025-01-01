@@ -136,4 +136,17 @@ function PlayAgain() {
    }
 }
 
+function StartNewGame() {
+   ClearMaze();
+   Output_A_Message("New Game", "nMsgBox0");
+   Output_A_Message("", "nMsgBox1");
+   Output_A_Message("", "nMsgBox2");
+   Output_A_Message("", "nInterAlive");
+   Output_A_Message("", "nInterKilled");
+   InstallHighVoltageBarriers();
+   Spawninterceptors();
+   SpawnPlayer();
+   UpdateTheMaze();
+}
+
 

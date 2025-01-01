@@ -78,9 +78,9 @@ function mController_Show() {
 
 
 function CommandButton0_Click() {
-   srand(time(NULL));
-   let iRow = ((Math.random() % iMazeRows) + 1) - cActivePlayer.Row();
-   let iColumn = ((Math.random() % iMazeCols) + 1) - cActivePlayer['m_iColumn'];
+   //srand(time(NULL));
+   let iRow = Math.floor((Math.random() * iMazeRows) + 1) - cActivePlayer['m_iRow'];
+   let iColumn = Math.floor((Math.random() * iMazeCols) + 1) - cActivePlayer['m_iColumn'];
    Output_A_Message("Super Jump!!!", "nMsgBox0");
    MovePlayer(iRow, iColumn);
    MoveInterceptors();
@@ -172,10 +172,12 @@ function WhoIsAlive() {
    UpdateTheMaze();
    if (cActivePlayer['m_bAlive'] == false) {
       Output_A_Message("You are dead.  You lose!", "nMsgBox2");
+      Output_A_Message("Alive Interceptor(s): " + nInterAlive, "nInterAlive");
       UnLoadMe = true;
    }
    else if (CheckInterceptorsAlive() == false) {
       Output_A_Message("All the interceptors are dead.  You win!", "nMsgBox2");
+      Output_A_Message("Alive Interceptor(s): 0", "nInterAlive");
       UnLoadMe = true;
    }
 

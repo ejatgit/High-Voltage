@@ -21,12 +21,20 @@ body {
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
     */
+table {
+    border: 1px solid white;
+}
 td {
     text-align: center;
     vertical-align: middle;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
-
+.alLeft {
+    text-align:left;
+}
+.addBorder {
+    border: 1px solid white;
+}
 #content {
     background: #000;
     clear: both;
