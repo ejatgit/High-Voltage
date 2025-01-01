@@ -9,7 +9,7 @@ class cPlayer {
 
 
    //Public:
-   GetAlive() {
+  /* GetAlive() {
       return cPlayer.m_bAlive;
    }
 
@@ -31,5 +31,5 @@ class cPlayer {
 
    SetColumn(iNowCol) {
       cPlayer.m_iColumn = iNowCol;
-   }
+   }*/
 }

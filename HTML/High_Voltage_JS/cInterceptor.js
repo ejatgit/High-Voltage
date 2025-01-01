@@ -10,7 +10,7 @@ class cInterceptor {
    m_iColumn=0;
 
    //Public
-   GetAlive() {
+   /*GetAlive() {
       return cInterceptor.m_bAlive;
    }
 
@@ -35,5 +35,5 @@ class cInterceptor {
       //let _iNowCol = iNowCol;
       m_iColumn(iNowCol);
    }
-
+   */
 }

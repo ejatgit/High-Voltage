@@ -9,7 +9,7 @@
 //#include"GlobalVariables.h"
 //import { cActivePlayer, rMaze, iMazeRows, iMazeCols, sDeadPlayerSymbol } from "./GlobalVariables.js";
 let UnLoadMe = false;
-
+/*
 function mController_Show() {
    //UnLoadMe = false;
    let sNowInput = "";
@@ -74,7 +74,7 @@ function mController_Show() {
       }
    } while (UnLoadMe == false);
 }
-
+*/
 
 
 function CommandButton0_Click() {
