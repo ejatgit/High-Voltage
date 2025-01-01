@@ -14,17 +14,22 @@ function MovePlayer(x_iRow, x_iColumn) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
       rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sPlayerSymbol;
       Output_A_Message("You are at row " + cActivePlayer['m_iRow'] + " column " + cActivePlayer['m_iColumn'], "nMsgBox1");
+      Output_A_Message("", "nMsgBox2");
    }
    else if (sTargetChar == sInterceptorSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
       rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sDeadPlayerSymbol;
       Output_A_Message("You hit an interceptor!", "nMsgBox0");
+      Output_A_Message("You are at row " + cActivePlayer['m_iRow'] + " column " + cActivePlayer['m_iColumn'], "nMsgBox1");
+      Output_A_Message("", "nMsgBox2");
       cActivePlayer['m_bAlive']=false;
    }
    else if (sTargetChar == sHighVoltageSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
       rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sDeadPlayerSymbol;
       Output_A_Message("You hit a barrier!", "nMsgBox0");
+      Output_A_Message("You are at row " + cActivePlayer['m_iRow'] + " column " + cActivePlayer['m_iColumn'], "nMsgBox1");
+      Output_A_Message("", "nMsgBox2");
       cActivePlayer['m_bAlive'] = false;
    }
 }

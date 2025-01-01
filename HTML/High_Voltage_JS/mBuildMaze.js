@@ -5,12 +5,12 @@ function SpawnPlayer() {
 
    //srand(time(NULL));
    for (let iCount = 0; iCount < 1000; ++iCount) {
-      let iRow = Math.floor((Math.random() * (iMazeRows - 1)) + 2);
-      let iColumn = Math.floor((Math.random() * (iMazeCols - 1)) + 2);
+      let iRow = Math.floor((Math.random() * (iMazeRows - 1)) + 1);
+      let iColumn = Math.floor((Math.random() * (iMazeCols - 1)) + 1);
       if (rMaze[iRow][iColumn] == sOpenAreaSymbol) {
          cActivePlayer['m_iRow']=iRow;
          cActivePlayer['m_iColumn'] = iColumn;
-         Output_A_Message("You are at row " + iRow + " column " + iColumn, "nMsgBox1");
+         Output_A_Message("You are at row " + iRow + " column " + iColumn, "nMsgBox2");
          break;
       }
 
@@ -54,13 +54,13 @@ function InstallHighVoltageBarriers() {
 
    //srand(time(NULL));
 
-   for (let iRow = 0; iRow < iMazeRows; ++iRow) {
+   for (let iRow = 0; iRow < iMazeRows+2; ++iRow) {
       iBarrierCount = 0;
-      for (let iCol = 0; iCol < iMazeCols; ++iCol) {
-         if ((iRow == 0) || (iRow == iMazeRows - 1)) {
+      for (let iCol = 0; iCol < iMazeCols+2; ++iCol) {
+         if ((iRow == 0) || (iRow == iMazeRows +1)) {
             rMaze[iRow][iCol] = sHighVoltageSymbol;
          }
-         else if ((iCol == 0) || (iCol == iMazeCols - 1)) {
+         else if ((iCol == 0) || (iCol == iMazeCols + 1 )) {
             rMaze[iRow][iCol] = sHighVoltageSymbol;
          }
          else {
@@ -104,15 +104,41 @@ function DrawTheMaze() {
 
 
 function InitialFillMaze() {
-   for (let iRow = 0; iRow < iMazeRows; ++iRow) {
+   for (let iRow = 0; iRow < iMazeRows+2; ++iRow) {      
       let MazeRow = [sOpenAreaSymbol];
-      for (let iCol = 0; iCol < iMazeCols; ++iCol) {
+      for (let iCol = 0; iCol < iMazeCols+1; ++iCol) {
+         if (iCol == iMazeCols) {
+            MazeRow.push(sOpenAreaSymbol);
+          //  MazeRow.push(iRow);
+         } else {
+            MazeRow.push(sOpenAreaSymbol);
+         }         
+      }
+      if (iRow > 0 && iRow < iMazeRows + 1) {
+         MazeRow.push(iRow);
+      } else {
          MazeRow.push(sOpenAreaSymbol);
       }
       if (iRow == 0) {
           rMaze.splice(0,1,MazeRow);         
       }
-      else { rMaze.push(MazeRow); }
+      else {
+         if (iRow == iMazeRows+1) {
+            rMaze.push(MazeRow);
+            let LastMazeRow = [sOpenAreaSymbol];
+            let iNowCol = 0;
+            for (let iCol = 1; iCol < iMazeCols + 1; ++iCol) {
+               iNowCol += 1;
+               if (iNowCol == 10) { iNowCol = 0; }
+               LastMazeRow.push(iNowCol);
+            }
+            LastMazeRow.push(sOpenAreaSymbol);
+            LastMazeRow.push(sOpenAreaSymbol);
+            rMaze.push(LastMazeRow);
+         } else {
+            rMaze.push(MazeRow);
+         }
+      }
    }
    InstallHighVoltageBarriers();
    Spawninterceptors();
@@ -126,9 +152,9 @@ function tableCreate() {
    tbl.style.width = '100px';
    tbl.style.border = '1px solid black';
    tbl.id = 'TheMaze'
-   for (let i = 0; i < iMazeRows; i++) {
+   for (let i = 0; i < iMazeRows+3; i++) {
       const tr = tbl.insertRow();
-      for (let j = 0; j < iMazeCols; j++) {
+      for (let j = 0; j < iMazeCols+3; j++) {
             const td = tr.insertCell();
             td.appendChild(document.createTextNode(rMaze[i][j]));
             td.style.border = '1px solid black';
