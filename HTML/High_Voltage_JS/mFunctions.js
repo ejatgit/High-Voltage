@@ -1,9 +1,3 @@
-//#include<string>
-//#include "mFunctions.h"
-//import { cActivePlayer, interceptorCollection } from "./GlobalVariables.js";
-//#include"High_Voltage.h"
-
-
 
 function offsetRowBy(iValue) {
    if (1 <= iValue && iValue <= 3) {
@@ -74,37 +68,35 @@ function CheckInterceptorsAlive() {
 function Output_A_Message(sNowMessage, rLocation) {
    if (rLocation === "nMsgBox0") {
       NowTarget = document.getElementById("nMsgBox0");
-      //std:: cout << sNowMessage << std:: endl;
-      NowTarget.firstChild.textContent = sNowMessage;
+      //NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nMsgBox1") {
       NowTarget = document.getElementById("nMsgBox1");
-      NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nMsgBox2") {
       NowTarget = document.getElementById("nMsgBox2");
-      //NowTarget.firstChild.textContent = sNowMessage;
-      NowTarget.innerHTML = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nInterAlive") {
       NowTarget = document.getElementById("nInterAlive");
-      NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nInterKilled") {
       NowTarget = document.getElementById("nInterKilled");
-      NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nTotalinterceptorsKilled") {
       NowTarget = document.getElementById("nTotalinterceptorsKilled");
-      NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
    else if (rLocation === "nQuestion0") {
       NowTarget = document.getElementById("nMsgBox0");
-      NowTarget.firstChild.textContent = sNowMessage;
+      NowTarget.innerText = sNowMessage;
    }
 }
 function PlayAGame() {
-   //sResponse;
    Output_A_Message("", "nMsgBox0");
    Output_A_Message("Do you want to enter the maze (Y or N)? ", "nQuestion0");
    let sResponse = Event.key;

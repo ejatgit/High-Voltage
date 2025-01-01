@@ -6,7 +6,7 @@
 //#include"mFunctions.h"
 //import { Output_A_Message, PlayAGame, PlayAgain } from "./mFunctions.js";
 //#include"High_Voltage.h"
-
+/*
 function RunGame() {
 
     GameIntro();
@@ -57,4 +57,4 @@ function GameIntro() {
    Output_A_Message("-1 = Give up. Situation hopeless.", "nIntroBox0");
    Output_A_Message("and of course '0' is super jump.", "nIntroBox0");
 }
-//export { RunGame };
+//export { RunGame };*/

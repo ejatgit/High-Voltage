@@ -1,10 +1,4 @@
 
-//#include"mMoveCharacters.h"
-//#include"High_Voltage.h"
-//#include "GlobalVariables.h"
-//import { cActivePlayer, sPlayerSymbol, sOpenAreaSymbol, rMaze } from "./GlobalVariables.js";
-//#include "mFunctions.h"
-//import { Output_A_Message } from "./mFunctions.js";
 
 function MovePlayer(x_iRow, x_iColumn) {
 
@@ -19,6 +13,7 @@ function MovePlayer(x_iRow, x_iColumn) {
    if (sTargetChar == sOpenAreaSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;
       rMaze[cActivePlayer['m_iRow']][cActivePlayer['m_iColumn']] = sPlayerSymbol;
+      Output_A_Message("You are at row " + cActivePlayer['m_iRow'] + " column " + cActivePlayer['m_iColumn'], "nMsgBox1");
    }
    else if (sTargetChar == sInterceptorSymbol) {
       rMaze[iLastRow][iLastColumn] = sOpenAreaSymbol;

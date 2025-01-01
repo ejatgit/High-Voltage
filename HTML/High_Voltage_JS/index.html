@@ -25,62 +25,26 @@
         *============*<br>
     </h1>
     <br>
-    <p>
-        You are within the walls of a high voltage maze.
-        There are 15 security machines (interceptors)
-        trying to destroy you.
-    </p>
-    <p>
-        You are the '*', and the interceptors are the '+'.
-        The areas marked 'x' are high voltage!
-        Your only hope is to destroy the interceptors by
-        running them into an 'x'.
-        Your moves are as follows:
-    </p>
-    <p>
-        <table style='border: 1px solid white'>
-            <tr>
-                <td>
-                    <table style='border: 1px solid white'>
-                        <tr><td colspan="3">Number Pad</td></tr>
-                        <tr><td>7</td><td>8</td><td>9</td></tr>
-                        <tr><td>4</td><td> </td><td>6</td></tr>
-                        <tr><td>1</td><td>2</td><td>3</td></tr>
-                    </table>
-                </td>
-                <td><table style='border: 1px solid white'>
-                    <tr><td colspan="3">Direction</td></tr>
-                    <tr><td></td><td>^</td><td></td></tr>
-                    <tr><td><</td><td>+</td><td>></td></tr>
-                    <tr><td></td><td>v</td><td></td></tr>
-                </table></td>
-            </tr>
-        </table>        
-    </p>
-    <table>
-        <tr><td>Message</td><td id="nMsgBox0">Welcome</td></tr>
-        <tr><td>Message</td><td id="nMsgBox1"></td></tr>
-        <tr><td>Message</td><td id="nMsgBox2"></td></tr>
-        <tr><td>Interceptors Alive</td><td id="nInterAlive">0</td></tr>
-        <tr><td>Interceptors Killed</td><td id="nInterKilled">0</td></tr>
-        <tr><td>Total Interceptors Killed</td><td id="nTotalinterceptorsKilled">0</td></tr>        
+        
+    <table style='border: 1px solid white'>
+        <tr><td>1:</td><td id="nMsgBox0">You are within the walls of a high voltage maze. There are security machines (interceptors) trying to destroy you.</td></tr>
+        <tr><td>2:</td><td id="nMsgBox1"></td></tr>
+        <tr><td>3:</td><td id="nMsgBox2"></td></tr>
+        <tr><td>4:</td><td id="nInterAlive">Your only hope is to destroy the interceptors by running them into an 'X'.</td></tr>
+        <tr><td>5:</td><td id="nInterKilled"></td></tr>
+        <tr><td>6:</td><td id="nTotalinterceptorsKilled"></td></tr>        
     </table>
-    <p>
-        5 = No move for one turn.<br>
-        10 = No move for the rest of the game.<br>
-        -1 = Give up. Situation hopeless.<br>
-        and of course '0' is super jump.<br>
-    </p>
+    <p></p>
     <p>
         <table>
             <tr>
                 <td id="MazeTarge"></td>
                 <td><table style='border: 1px solid white'>
-                        <tr><td colspan="3">Direction</td></tr>
+                        <tr><td colspan="3">These are your moves</td></tr>
                         <tr><td><button style="height:55px;width:55px" onclick="CommandButton7_Click()">7</button></td><td><button style="height:55px;width:55px" onclick="CommandButton8_Click()">Up</button></td><td><button style="height:55px;width:55px" onclick="CommandButton9_Click()">9</button></td></tr>
                         <tr><td><button style="height:55px;width:55px" onclick="CommandButton4_Click()">Left</button></td><td><button style="height:55px;width:55px" onclick="CommandButton5_Click()">5</button></td><td><button style="height:55px;width:55px" onclick="CommandButton6_Click()">Right</button></td></tr>
                         <tr><td><button style="height:55px;width:55px" onclick="CommandButton1_Click()">1</button></td><td><button style="height:55px;width:55px" onclick="CommandButton2_Click()">Down</button></td><td><button style="height:55px;width:55px" onclick="CommandButton3_Click()">3</button></td></tr>
-                        <tr><td><button style="height:55px;width:55px" onclick="CommandButtonNeg1_Click()">-1</button></td><td><button style="height:55px;width:55px" onclick="CommandButton0_Click()">0</button></td><td><button style="height:55px;width:55px" onclick="CommandButton10_Click()">10</button></td></tr>
+                        <tr><td><button style="height:55px;width:55px" onclick="CommandButtonNeg1_Click()">Give Up</button></td><td><button style="height:55px;width:55px" onclick="CommandButton0_Click()">Super Jump</button></td><td><button style="height:55px;width:55px" onclick="CommandButton10_Click()">No Move</button></td></tr>
                     </table>
                 </td>
             </tr>
@@ -93,8 +57,8 @@
 
      </div> -->
     <!-- <button onclick="tableCreate()">Build Table</button> -->
-    <button onclick="InitialFillMaze2()">Build The Maze</button>
-    <button onclick="RunGame()">Start Game</button>
+    <button onclick="InitialFillMaze()">Build The Maze</button>
+    <button onclick="PlayAGame()">Play Game</button>
 </body>
 
 </html>
